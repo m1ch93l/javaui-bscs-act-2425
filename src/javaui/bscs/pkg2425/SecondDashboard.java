@@ -28,6 +28,9 @@ public class SecondDashboard extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         gobacktomain = new javax.swing.JButton();
+        Amount = new javax.swing.JTextField();
+        Deposit = new javax.swing.JButton();
+        BalanceAgain = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -38,6 +41,22 @@ public class SecondDashboard extends javax.swing.JFrame {
         gobacktomain.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gobacktomainActionPerformed(evt);
+            }
+        });
+
+        Amount.setName(""); // NOI18N
+
+        Deposit.setText("Deposit");
+        Deposit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DepositActionPerformed(evt);
+            }
+        });
+
+        BalanceAgain.setText("Balance");
+        BalanceAgain.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BalanceAgainActionPerformed(evt);
             }
         });
 
@@ -53,14 +72,28 @@ public class SecondDashboard extends javax.swing.JFrame {
                         .addGap(147, 147, 147))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(gobacktomain)
-                        .addGap(185, 185, 185))))
+                        .addGap(185, 185, 185))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Deposit)
+                        .addGap(116, 116, 116)
+                        .addComponent(BalanceAgain)
+                        .addGap(65, 65, 65))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Amount, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(238, 238, 238))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(77, 77, 77)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(Amount, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Deposit)
+                    .addComponent(BalanceAgain))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
                 .addComponent(gobacktomain)
                 .addGap(30, 30, 30))
         );
@@ -74,11 +107,25 @@ public class SecondDashboard extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_gobacktomainActionPerformed
 
+    private void DepositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DepositActionPerformed
+        String msg = Amount.getText();
+        new Balance(msg).setVisible(true);
+        dispose();
+    }//GEN-LAST:event_DepositActionPerformed
+
+    private void BalanceAgainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BalanceAgainActionPerformed
+        new Balance().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_BalanceAgainActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Amount;
+    private javax.swing.JButton BalanceAgain;
+    private javax.swing.JButton Deposit;
     private javax.swing.JButton gobacktomain;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
