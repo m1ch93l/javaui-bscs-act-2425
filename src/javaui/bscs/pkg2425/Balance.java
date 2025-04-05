@@ -69,6 +69,7 @@ public class Balance extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BalanceBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BalanceBackActionPerformed
